@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Raquib | Backend Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+
+<body class="dark:bg-gray-900 dark:text-white bg-white text-gray-900 font-sans">
+
+    <div class="text-right p-4">
+        <button onclick="document.body.classList.toggle('dark')" class="text-sm text-blue-500 hover:underline">Toggle Dark Mode</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+        <h1 class="text-5xl font-bold">Mohammed Raquib</h1>
+        <p class="mt-4 text-xl max-w-2xl">
+            Backend Engineer focused on building developer-first tools and automation systems using Python, FastAPI, and Docker. Ruthless with clean code and async design.
+        </p>
+        <div class="mt-6 space-x-4">
+            <a href="https://github.com/raquib-dev" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-500">GitHub</a>
+            <a href="resume/raquib-resume.pdf" class="border border-gray-600 px-6 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Download Resume</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="px-6 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+
+            <!-- Project Card Template -->
+            <!-- Duplicate this block for each project -->
+
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <img src="assets/screenshots/feedback-api.png" alt="Feedback API" class="rounded mb-4">
+                <h3 class="text-xl font-semibold mb-1">Feedback API (JWT Auth, Docker)</h3>
+                <p class="text-sm mb-2">FastAPI, Async SQLAlchemy, JWT, Docker</p>
+                <p class="mb-4">Secure backend API to submit and moderate user feedback. Includes role-based access, async architecture and Docker deployment.</p>
+                <a href="https://github.com/raquib-dev/feedback-api-fastapi" class="text-blue-500 hover:underline">View on GitHub</a>
+            </div>
+
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <img src="assets/screenshots/sync-manager.png" alt="Sync Manager" class="rounded mb-4">
+                <h3 class="text-xl font-semibold mb-1">FastAPI Sync Manager</h3>
+                <p class="text-sm mb-2">FastAPI, AsyncIO, Linux automation</p>
+                <p class="mb-4">Proposed and developed to simplify syncing files + sudo tasks across 30+ Linux clients. UI-driven and runs all operations in parallel.</p>
+                <a href="https://github.com/raquib-dev/fastapi-sync-manager" class="text-blue-500 hover:underline">View on GitHub</a>
+            </div>
+
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <img src="assets/screenshots/network-monitor.png" alt="Network Monitor" class="rounded mb-4">
+                <h3 class="text-xl font-semibold mb-1">Network Ping Monitor</h3>
+                <p class="text-sm mb-2">FastAPI, Threading, Logging</p>
+                <p class="mb-4">Pings entered IPs, logs reachability, and provides live/historical reports. Designed to debug industrial network issues quickly.</p>
+                <a href="https://github.com/raquib-dev/network-ping-monitor" class="text-blue-500 hover:underline">View on GitHub</a>
+            </div>
+
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <img src="assets/screenshots/download-organizer.png" alt="Smart File Organizer" class="rounded mb-4">
+                <h3 class="text-xl font-semibold mb-1">Smart Download Organizer</h3>
+                <p class="text-sm mb-2">Python CLI, OS Automation</p>
+                <p class="mb-4">CLI utility that organizes files from Downloads folder by type or name patterns. Easy to extend and customize.</p>
+                <a href="https://github.com/raquib-dev/smart-download-organizer" class="text-blue-500 hover:underline">View on GitHub</a>
+            </div>
+
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <img src="assets/screenshots/battery-alert.png" alt="Battery Notifier" class="rounded mb-4">
+                <h3 class="text-xl font-semibold mb-1">Battery Alert Notifier</h3>
+                <p class="text-sm mb-2">Python, psutil, tray notifications</p>
+                <p class="mb-4">Cross-platform battery notifier that alerts on full or low battery. Auto logs every status with date-wise cleanup.</p>
+                <a href="https://github.com/raquib-dev/battery-alert-notifier" class="text-blue-500 hover:underline">View on GitHub</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="px-6 py-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">Skills & Tech Stack</h2>
+        <div class="space-y-2 text-lg">
+            <p>Python 3.11+, FastAPI, SQLAlchemy, Celery, JWT</p>
+            <p>Docker, Git & GitHub, REST APIs, Linux</p>
+            <p>PostgreSQL, SQLite, Redis, AsyncIO</p>
+            <p>System tools, Task automation, Real-world debugging</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="px-6 py-16 bg-gray-50 dark:bg-gray-800 text-center">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="max-w-3xl mx-auto text-lg">
+            I'm a backend-first developer obsessed with clean automation and developer tooling. I solve hard problems using Python, FastAPI, and Docker. This portfolio is just the beginning.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="px-6 py-12 text-center">
+        <h2 class="text-3xl font-bold mb-4">Contact</h2>
+        <p>Email: <a href="mailto:raquib.pythondev@gmail.com" class="text-blue-500">raquib.pythondev@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/raquib-dev" class="text-blue-500">github.com/raquib-dev</a></p>
+    </section>
+
+    <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+        © 2025 Mohammed Raquib. Built with raw HTML + Tailwind. No fluff. Just skill.
+    </footer>
+
+</body>
+
+</html>
