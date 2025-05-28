@@ -1,127 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Raquib | Senior Software Developer</title>
+    <title>Mohammed Raquib | Associate Python Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class'
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#3B82F6',
+                    },
+                },
+            },
         }
     </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, #1F2937 0%, #4B5563 100%);
+        }
+    </style>
 </head>
-
-<body class="dark:bg-gray-900 dark:text-white bg-white text-gray-900 font-sans">
-    <div class="text-right p-4">
-        <button onclick="document.body.classList.toggle('dark')" class="text-sm text-blue-500 hover:underline">Toggle Dark Mode</button>
-    </div>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white font-sans transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white dark:bg-gray-800 shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Mohammed Raquib</h1>
+            <div class="flex items-center space-x-4">
+                <a href="#projects" class="hover:text-secondary">Projects</a>
+                <a href="#experience" class="hover:text-secondary">Experience</a>
+                <a href="#skills" class="hover:text-secondary">Skills</a>
+                <a href="#contact" class="hover:text-secondary">Contact</a>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700" aria-label="Toggle Dark Mode">
+                    <svg id="sun-icon" class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    <svg id="moon-icon" class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <h1 class="text-5xl font-bold">Mohammed Raquib</h1>
-        <p class="mt-4 text-xl max-w-2xl">
-            Senior Software Developer crafting reliable backends, tools and platforms with Python, FastAPI & Docker.<br> Passionate about solving real-world problems with elegant, maintainable code.
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 gradient-bg text-white" data-aos="fade-up">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Mohammed Raquib</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mb-6">
+            Associate Python Developer specializing in scalable backend solutions, REST APIs with FastAPI, and cloud deployment on AWS. Passionate about optimizing systems and delivering impactful projects.
         </p>
-        <div class="mt-6 space-x-4">
-            <a href="https://github.com/raquib-dev" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-500">GitHub</a>
-            <a href="resume/raquib-resume.pdf" class="border border-gray-600 px-6 py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">Download Resume</a>
+        <div class="flex space-x-4">
+            <a href="https://github.com/raquib-dev" class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition">GitHub</a>
+            <a href="resume/raquib-resume.pdf" class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition">Download Resume</a>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="px-6 py-16">
-        <h2 class="text-4xl font-bold text-center mb-12">Highlighted Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <img src="assets/screenshots/feedback-api.png" alt="Feedback API" class="rounded mb-4">
-                <h3 class="text-xl font-semibold mb-1">Feedback API (JWT Auth, Docker)</h3>
-                <p class="text-sm mb-2">FastAPI, Async SQLAlchemy, JWT, Docker</p>
-                <p class="mb-4">Secure backend API to submit and moderate user feedback. Includes role-based access, async architecture and Docker deployment.</p>
-                <a href="https://github.com/raquib-dev/feedback-api-fastapi" class="text-blue-500 hover:underline">View on GitHub</a>
+    <section id="projects" class="px-6 py-16 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Highlighted Projects</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="100">
+                <img src="assets/screenshots/stock-control.png" alt="Stock Control Management" class="rounded mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">Stock Control Management</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | FastAPI | MySQL | Angular.js | Docker</p>
+                <p class="mb-4">Developed a comprehensive stock management system with real-time inventory tracking and automated reporting. Deployed on Hostinger VPS with Docker.</p>
+                <a href="https://github.com/raquib-dev/stock-control" class="text-secondary hover:underline">View on GitHub</a>
             </div>
-
-            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <img src="assets/screenshots/sync-manager.png" alt="Sync Manager" class="rounded mb-4">
-                <h3 class="text-xl font-semibold mb-1">FastAPI Sync Manager</h3>
-                <p class="text-sm mb-2">FastAPI, AsyncIO, Linux automation</p>
-                <p class="mb-4">Proposed and developed to simplify syncing files + sudo tasks across 30+ Linux clients. UI-driven and runs all operations in parallel.</p>
-                <a href="https://github.com/raquib-dev/fastapi-sync-manager" class="text-blue-500 hover:underline">View on GitHub</a>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="200">
+                <img src="assets/screenshots/hikvision-sync.png" alt="Hikvision Camera Sync" class="rounded mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">Hikvision Camera Employee Sync</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | .NET | Digest Authentication</p>
+                <p class="mb-4">Automated employee data synchronization between HR database and Hikvision cameras, achieving 100% automation and 95% error reduction.</p>
+                <a href="https://github.com/raquib-dev/hikvision-sync" class="text-secondary hover:underline">View on GitHub</a>
             </div>
-
-            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <img src="assets/screenshots/network-monitor.png" alt="Network Monitor" class="rounded mb-4">
-                <h3 class="text-xl font-semibold mb-1">Network Ping Monitor</h3>
-                <p class="text-sm mb-2">FastAPI, Threading, Logging</p>
-                <p class="mb-4">Pings entered IPs, logs reachability, and provides live/historical reports. Designed to debug industrial network issues quickly.</p>
-                <a href="https://github.com/raquib-dev/network-ping-monitor" class="text-blue-500 hover:underline">View on GitHub</a>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="300">
+                <img src="assets/screenshots/rfid-reader.png" alt="RFID Reader Management" class="rounded mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">RFID Reader Management System</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">.NET | RFID SDK | Database Management</p>
+                <p class="mb-4">Built a .NET application for RFID tag scanning with secure license validation and real-time data management.</p>
+                <a href="https://github.com/raquib-dev/rfid-reader" class="text-secondary hover:underline">View on GitHub</a>
             </div>
-
-            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <img src="assets/screenshots/download-organizer.png" alt="Smart File Organizer" class="rounded mb-4">
-                <h3 class="text-xl font-semibold mb-1">Smart Download Organizer</h3>
-                <p class="text-sm mb-2">Python CLI, OS Automation</p>
-                <p class="mb-4">CLI utility that organizes files from Downloads folder by type or name patterns. Easy to extend and customize.</p>
-                <a href="https://github.com/raquib-dev/smart-download-organizer" class="text-blue-500 hover:underline">View on GitHub</a>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="400">
+                <img src="assets/screenshots/oee-monitoring.png" alt="OEE Monitoring System" class="rounded mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">Real-time Equipment OEE Monitoring</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | Socket Programming | SQL</p>
+                <p class="mb-4">Deployed real-time data extraction from PLCs, reducing equipment downtime by 20% and increasing productivity by 15%.</p>
+                <a href="https://github.com/raquib-dev/oee-monitoring" class="text-secondary hover:underline">View on GitHub</a>
             </div>
-
-            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-md">
-                <img src="assets/screenshots/battery-alert.png" alt="Battery Notifier" class="rounded mb-4">
-                <h3 class="text-xl font-semibold mb-1">Battery Alert Notifier</h3>
-                <p class="text-sm mb-2">Python, psutil, tray notifications</p>
-                <p class="mb-4">Cross-platform battery notifier that alerts on full or low battery. Auto logs every status with date-wise cleanup.</p>
-                <a href="https://github.com/raquib-dev/battery-alert-notifier" class="text-blue-500 hover:underline">View on GitHub</a>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="500">
+                <img src="assets/screenshots/parking-system.png" alt="Car Parking System" class="rounded mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">Car Parking System Automation</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | FastAPI | SQL | Socket Programming</p>
+                <p class="mb-4">Developed RESTful APIs and PLC communication protocols, improving query performance by 40% and user satisfaction by 30%.</p>
+                <a href="https://github.com/raquib-dev/parking-system" class="text-secondary hover:underline">View on GitHub</a>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="600">
+                <img src="assets/screenshots/sftp-transfer.png" alt="SFTP File Transfer" class="rounded mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold mb-2">SFTP File Transfer Software</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | FastAPI | AsyncIO</p>
+                <p class="mb-4">Built secure file transfer software with asynchronous architecture, improving efficiency by 40%.</p>
+                <a href="https://github.com/raquib-dev/sftp-transfer" class="text-secondary hover:underline">View on GitHub</a>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section class="px-6 py-12 text-center">
-        <h2 class="text-3xl font-bold mb-6">Experience</h2>
-        <div class="max-w-4xl mx-auto space-y-6">
-            <div>
-                <h3 class="text-xl font-semibold">Senior Software Developer at NextEdge Innovations</h3>
-                <p class="text-gray-400 text-sm">2022 – Present</p>
-                <p class="mt-2">Leading development of scalable backend systems using FastAPI and Docker. Mentoring juniors and improving CI/CD workflows. Delivered internal tools that cut operational time by 40%.</p>
+    <section id="experience" class="px-6 py-16 bg-gray-50 dark:bg-gray-800">
+        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Professional Experience</h2>
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-xl font-semibold">Associate Software Developer</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Ausweg Info Controls Pvt Ltd | May 2023 – Present</p>
+                <ul class="list-disc list-inside mt-2 text-lg">
+                    <li>Architected REST APIs with FastAPI, handling 10,000+ daily requests with 99.9% uptime.</li>
+                    <li>Led Docker containerization for all projects, deploying on AWS EC2 and on-premises.</li>
+                    <li>Optimized MySQL schemas, achieving 50% faster data retrieval.</li>
+                    <li>Mentored juniors, reducing bugs by 40% through code reviews.</li>
+                </ul>
             </div>
-            <div>
-                <h3 class="text-xl font-semibold">Software Developer at Technocraft Solutions</h3>
-                <p class="text-gray-400 text-sm">2019 – 2022</p>
-                <p class="mt-2">Built real-time APIs, task schedulers, and system integration tools. Known for clean code, reliability and getting things done ahead of time.</p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <h3 class="text-xl font-semibold">Junior Software Developer</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Ausweg Info Controls Pvt Ltd | October 2021 – May 2023</p>
+                <ul class="list-disc list-inside mt-2 text-lg">
+                    <li>Developed scalable Python backend applications with MySQL, handling 500+ concurrent users.</li>
+                    <li>Implemented socket programming for real-time industrial data extraction.</li>
+                    <li>Migrated Python 2.7 codebase to 3.9, improving performance by 15%.</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="px-6 py-12 text-center">
-        <h2 class="text-3xl font-bold mb-6">Skills & Tech Stack</h2>
-        <div class="space-y-2 text-lg">
-            <p>Python 3.11+, FastAPI, SQLAlchemy, Celery, JWT</p>
-            <p>Docker, Git & GitHub, REST APIs, Linux</p>
-            <p>PostgreSQL, SQLite, Redis, AsyncIO</p>
-            <p>Tooling, Task automation, System design, Logging</p>
+    <section id="skills" class="px-6 py-16 text-center">
+        <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Skills & Tech Stack</h2>
+        <div class="flex flex-wrap justify-center gap-4 text-lg" data-aos="fade-up" data-aos-delay="100">
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">Python</span>
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">FastAPI</span>
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">MySQL</span>
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">Docker</span>
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">AWS EC2</span>
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">REST APIs</span>
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">Socket Programming</span>
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">AsyncIO</span>
+            <span class="bg-secondary text-white px-4 py-2 rounded-full">Git & GitHub</span>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="px-6 py-16 bg-gray-50 dark:bg-gray-800 text-center">
-        <h2 class="text-3xl font-bold mb-4">About Me</h2>
-        <p class="max-w-3xl mx-auto text-lg">
-            I'm a senior backend developer dedicated to building real-world systems that are fast, reliable and cleanly architected. Every tool I create is guided by purpose — to save time, increase efficiency, and enable scalability.
-        </p>
-    </section>
-
     <!-- Contact Section -->
-    <section class="px-6 py-12 text-center">
-        <h2 class="text-3xl font-bold mb-4">Let’s Connect</h2>
-        <p>Email: <a href="mailto:raquib.pythondev@gmail.com" class="text-blue-500">raquib.pythondev@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/raquib-dev" class="text-blue-500">github.com/raquib-dev</a></p>
+    <section id="contact" class="px-6 py-16 bg-gray-50 dark:bg-gray-800 text-center">
+        <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Let’s Connect</h2>
+        <p class="text-lg mb-4">Email: <a href="mailto:raquib.pythondev@gmail.com" class="text-secondary hover:underline">raquib.pythondev@gmail.com</a></p>
+        <p class="text-lg mb-8">GitHub: <a href="https://github.com/raquib-dev" class="text-secondary hover:underline">github.com/raquib-dev</a></p>
+        <div class="max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <form action="https://formspree.io/f/your-form-id" method="POST">
+                <input type="text" name="name" placeholder="Your Name" class="w-full p-3 mb-4 rounded-lg border dark:bg-gray-700" required>
+                <input type="email" name="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded-lg border dark:bg-gray-700" required>
+                <textarea name="message" placeholder="Your Message" class="w-full p-3 mb-4 rounded-lg border dark:bg-gray-700" rows="5" required></textarea>
+                <button type="submit" class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition">Send Message</button>
+            </form>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
-        © 2025 Mohammed Raquib. Built to impress, with passion and precision.
+        © 2025 Mohammed Raquib. Crafted with precision and passion.
     </footer>
-</body>
 
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, once: true });
+
+        // Dark Mode Toggle with Local Storage
+        const toggleButton = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
+            document.body.classList.add('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            sunIcon.classList.toggle('hidden', !isDark);
+            moonIcon.classList.toggle('hidden', isDark);
+        });
+
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
 </html>
