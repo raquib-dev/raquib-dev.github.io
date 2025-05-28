@@ -1,208 +1,929 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Raquib | Associate Python Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E40AF',
-                        secondary: '#3B82F6',
-                    },
-                },
-            },
-        }
-    </script>
+    <title>Raquib - Personal Portfolio</title>
+
     <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+        .project-item {
+            align-content: center;
+            width: 250px;
+            /* Adjust width as needed */
+            height: 250px;
+            /* Adjust height as needed */
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        
+        .project-img {
+            align-content: center;
+            position: relative;
         }
-        .dark .gradient-bg {
-            background: linear-gradient(135deg, #1F2937 0%, #4B5563 100%);
+        
+        .project-item-icon-box {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .project-item-icon-box ion-icon {
+            font-size: 24px;
+            /* Adjust icon size as needed */
+        }
+        
+        .project-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .project-item {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .project-img {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
+
+    <!--
+    - favicon
+  -->
+    <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white font-sans transition-colors duration-300">
-    <!-- Navigation -->
-    <nav class="sticky top-0 bg-white dark:bg-gray-800 shadow-md z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Mohammed Raquib</h1>
-            <div class="flex items-center space-x-4">
-                <a href="#projects" class="hover:text-secondary">Projects</a>
-                <a href="#experience" class="hover:text-secondary">Experience</a>
-                <a href="#skills" class="hover:text-secondary">Skills</a>
-                <a href="#contact" class="hover:text-secondary">Contact</a>
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700" aria-label="Toggle Dark Mode">
-                    <svg id="sun-icon" class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                    <svg id="moon-icon" class="w-6 h-6 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-                </button>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 gradient-bg text-white" data-aos="fade-up">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">Mohammed Raquib</h1>
-        <p class="text-xl md:text-2xl max-w-3xl mb-6">
-            Associate Python Developer specializing in scalable backend solutions, REST APIs with FastAPI, and cloud deployment on AWS. Passionate about optimizing systems and delivering impactful projects.
-        </p>
-        <div class="flex space-x-4">
-            <a href="https://github.com/raquib-dev" class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition">GitHub</a>
-            <a href="resume/raquib-resume.pdf" class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-primary transition">Download Resume</a>
-        </div>
-    </section>
+<body>
 
-    <!-- Projects Section -->
-    <section id="projects" class="px-6 py-16 max-w-7xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Highlighted Projects</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="100">
-                <img src="assets/screenshots/stock-control.png" alt="Stock Control Management" class="rounded mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-semibold mb-2">Stock Control Management</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | FastAPI | MySQL | Angular.js | Docker</p>
-                <p class="mb-4">Developed a comprehensive stock management system with real-time inventory tracking and automated reporting. Deployed on Hostinger VPS with Docker.</p>
-                <a href="https://github.com/raquib-dev/stock-control" class="text-secondary hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="200">
-                <img src="assets/screenshots/hikvision-sync.png" alt="Hikvision Camera Sync" class="rounded mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-semibold mb-2">Hikvision Camera Employee Sync</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | .NET | Digest Authentication</p>
-                <p class="mb-4">Automated employee data synchronization between HR database and Hikvision cameras, achieving 100% automation and 95% error reduction.</p>
-                <a href="https://github.com/raquib-dev/hikvision-sync" class="text-secondary hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="300">
-                <img src="assets/screenshots/rfid-reader.png" alt="RFID Reader Management" class="rounded mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-semibold mb-2">RFID Reader Management System</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">.NET | RFID SDK | Database Management</p>
-                <p class="mb-4">Built a .NET application for RFID tag scanning with secure license validation and real-time data management.</p>
-                <a href="https://github.com/raquib-dev/rfid-reader" class="text-secondary hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="400">
-                <img src="assets/screenshots/oee-monitoring.png" alt="OEE Monitoring System" class="rounded mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-semibold mb-2">Real-time Equipment OEE Monitoring</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | Socket Programming | SQL</p>
-                <p class="mb-4">Deployed real-time data extraction from PLCs, reducing equipment downtime by 20% and increasing productivity by 15%.</p>
-                <a href="https://github.com/raquib-dev/oee-monitoring" class="text-secondary hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="500">
-                <img src="assets/screenshots/parking-system.png" alt="Car Parking System" class="rounded mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-semibold mb-2">Car Parking System Automation</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | FastAPI | SQL | Socket Programming</p>
-                <p class="mb-4">Developed RESTful APIs and PLC communication protocols, improving query performance by 40% and user satisfaction by 30%.</p>
-                <a href="https://github.com/raquib-dev/parking-system" class="text-secondary hover:underline">View on GitHub</a>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md card-hover transition transform" data-aos="fade-up" data-aos-delay="600">
-                <img src="assets/screenshots/sftp-transfer.png" alt="SFTP File Transfer" class="rounded mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-semibold mb-2">SFTP File Transfer Software</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Python | FastAPI | AsyncIO</p>
-                <p class="mb-4">Built secure file transfer software with asynchronous architecture, improving efficiency by 40%.</p>
-                <a href="https://github.com/raquib-dev/sftp-transfer" class="text-secondary hover:underline">View on GitHub</a>
-            </div>
-        </div>
-    </section>
+    <!--
+    - #MAIN
+  -->
 
-    <!-- Experience Section -->
-    <section id="experience" class="px-6 py-16 bg-gray-50 dark:bg-gray-800">
-        <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Professional Experience</h2>
-        <div class="max-w-4xl mx-auto space-y-8">
-            <div data-aos="fade-up" data-aos-delay="100">
-                <h3 class="text-xl font-semibold">Associate Software Developer</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Ausweg Info Controls Pvt Ltd | May 2023 – Present</p>
-                <ul class="list-disc list-inside mt-2 text-lg">
-                    <li>Architected REST APIs with FastAPI, handling 10,000+ daily requests with 99.9% uptime.</li>
-                    <li>Led Docker containerization for all projects, deploying on AWS EC2 and on-premises.</li>
-                    <li>Optimized MySQL schemas, achieving 50% faster data retrieval.</li>
-                    <li>Mentored juniors, reducing bugs by 40% through code reviews.</li>
+    <main>
+
+        <!--
+      - #SIDEBAR
+    -->
+
+        <aside class="sidebar" data-sidebar>
+
+            <div class="sidebar-info">
+
+                <figure class="avatar-box">
+                    <img src="./assets/images/my-avatar.png" alt="Mohammed Raquib" width="80">
+                </figure>
+
+                <div class="info-content">
+                    <h1 class="name" title="Mohammed Raquib">Mohammed Raquib</h1>
+
+                    <p class="title">Senior Software Developer</p>
+                </div>
+
+                <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+            </div>
+
+            <div class="sidebar-info_more">
+
+                <div class="separator"></div>
+
+                <ul class="contacts-list">
+
+                    <li class="contact-item">
+
+                        <div class="icon-box">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="contact-title">Email</p>
+
+                            <a href="mailto:raquib.pythondev@gmail.com" class="contact-link">raquib.pythondev@gmail.com</a>
+                        </div>
+
+                    </li>
+
+
+                    <li class="contact-item">
+
+                        <div class="icon-box">
+                            <ion-icon name="phone-portrait-outline"></ion-icon>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="contact-title">Phone</p>
+
+                            <a href="tel:+91 9345835739" class="contact-link">+91 9345835739</a>
+                        </div>
+
+                    </li>
+
+                    <li class="contact-item">
+
+                        <div class="icon-box">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="contact-title">Birthday</p>
+
+                            <time datetime="Jan 18, 2003">Jan 18, 2003</time>
+                        </div>
+
+                    </li>
+
+                    <li class="contact-item">
+
+                        <div class="icon-box">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+
+                        <div class="contact-info">
+                            <p class="contact-title">Location</p>
+
+                            <address>Coimbatore, Tamilnadu</address>
+                        </div>
+
+                    </li>
+
                 </ul>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <h3 class="text-xl font-semibold">Junior Software Developer</h3>
-                <p class="text-gray-500 dark:text-gray-400 text-sm">Ausweg Info Controls Pvt Ltd | October 2021 – May 2023</p>
-                <ul class="list-disc list-inside mt-2 text-lg">
-                    <li>Developed scalable Python backend applications with MySQL, handling 500+ concurrent users.</li>
-                    <li>Implemented socket programming for real-time industrial data extraction.</li>
-                    <li>Migrated Python 2.7 codebase to 3.9, improving performance by 15%.</li>
+
+                <div class="separator"></div>
+
+                <ul class="social-list">
+
+                    <li class="social-item">
+                        <a href="https://www.linkedin.com/in/mohammed-raquib-r/" class="social-link" target="_blank">
+                            <ion-icon name="logo-linkedIn"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li class="social-item">
+                        <a href="https://github.com/raquib-dev" class="social-link" target="_blank">
+                            <ion-icon name="logo-Github"></ion-icon>
+                        </a>
+                    </li>
+
                 </ul>
+
             </div>
+
+        </aside>
+
+
+
+
+
+        <!--
+      - #main-content
+    -->
+
+        <div class="main-content">
+
+            <!--
+        - #NAVBAR
+      -->
+
+            <nav class="navbar">
+
+                <ul class="navbar-list">
+
+                    <li class="navbar-item">
+                        <button class="navbar-link  active" data-nav-link>About</button>
+                    </li>
+
+                    <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link>Resume</button>
+                    </li>
+
+                    <!-- <li class="navbar-item">
+                        <button class="navbar-link" data-nav-link>Portfolio</button>
+                    </li> -->
+
+                    <!--          <li class="navbar-item">-->
+                    <!--            <button class="navbar-link" data-nav-link>Contact</button>-->
+                    <!--          </li>-->
+
+                </ul>
+
+            </nav>
+
+
+
+
+
+            <!--
+        - #ABOUT
+      -->
+
+            <article class="about  active" data-page="about">
+
+                <header>
+                    <h2 class="h2 article-title">About me</h2>
+                </header>
+
+                <section class="about-text">
+                    <p>
+                        Senior Python Developer specializing in scalable backend solutions, REST APIs with FastAPI, and cloud deployment on AWS. Passionate about optimizing systems and delivering impactful projects.
+                    </p>
+
+                </section>
+
+
+                <!--
+          - service
+        -->
+
+                <section class="service">
+
+                    <h3 class="h3 service-title">What i'm doing</h3>
+
+                    <ul class="service-list">
+
+                        <li class="service-item">
+
+                            <div class="service-icon-box">
+                                <img src="./assets/images/icon-backend.svg" alt="backend icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Backend Development</h4>
+
+                                <p class="service-item-text">
+                                    Building scalable backend solutions and REST APIs using FastAPI and Python, focusing on performance optimization and seamless cloud deployment on AWS.
+                                </p>
+                            </div>
+
+                        </li>
+
+                        <li class="service-item">
+
+                            <div class="service-icon-box">
+                                <img src="./assets/images/icon-automation.svg
+                " alt="system automation icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">System Automation</h4>
+
+                                <p class="service-item-text">
+
+                                    Developing tools to automate processes like file organization, network monitoring, and industrial equipment tracking, enhancing efficiency with Python and socket programming.
+                            </div>
+
+                        </li>
+
+                        <li class="service-item">
+
+                            <div class="service-icon-box">
+                                <img src="./assets/images/icon-dev.svg" alt="API development icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">API Architecture</h4>
+
+                                <p class="service-item-text">
+
+                                    Crafting robust APIs with FastAPI, integrating JWT-based authentication, Dockerized deployments, and real-time data handling for industrial and user-focused applications.
+                            </div>
+
+                        </li>
+
+
+
+                        <li class="service-item">
+
+                            <div class="service-icon-box">
+                                <img src="./assets/images/icon-mentor.svg" alt="Mentorship icon" width="40">
+                            </div>
+
+                            <div class="service-content-box">
+                                <h4 class="h4 service-item-title">Mentorship & Leadership</h4>
+
+                                <p class="service-item-text">
+                                    Guiding junior developers through code reviews and best practices, reducing bugs and fostering growth while sharing expertise in Python, MySQL, and system design.
+                                </p>
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </section>
+
+                <div class="modal-container" data-modal-container>
+
+                    <div class="overlay" data-overlay></div>
+
+                    <section class="testimonials-modal">
+
+                        <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+                        <div class="modal-img-wrapper">
+                            <figure class="modal-avatar-box">
+                                <img src="./assets/images/avatar-1.png" alt="" width="80" data-modal-img>
+                            </figure>
+
+                            <img src="./assets/images/icon-quote.svg" alt="quote icon">
+                        </div>
+
+                        <div class="modal-content">
+
+                            <h4 class="h3 modal-title" data-modal-title></h4>
+
+                            <time datetime="2021-06-14">  </time>
+
+                            <div data-modal-text>
+                                <p>
+
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!--
+          - clients
+        -->
+
+                <section class="Published Apps">
+
+                    <h3 class="h3 apps-title">Github Projects</h3>
+
+                    <ul class="clients-list has-scrollbar">
+
+                        <li class="clients-item" style="text-align: center;">
+
+                            <a href="https://github.com/raquib-dev/network-ping-monitor" target="_blank">
+                                <h1 style="color: #FFDB70;">Network Monitor</h1>
+                                <br>
+                                <img src="./assets/images/network-monitor.png" alt="App logo" width="40" height="160">
+                            </a>
+
+                        </li>
+
+                        <li class="clients-item" style="text-align: center;">
+
+                            <a href="https://github.com/raquib-dev/fastapi-sync-manager" target="_blank">
+                                <h1 style="color: #FFDB70;">File Sync(FTP)</h1>
+                                <br>
+                                <img src="./assets/images/ftp.png" alt="App logo" width="40" height="160">
+                            </a>
+
+                        </li>
+
+                        <li class="clients-item" style="text-align: center;">
+
+                            <a href="https://github.com/raquib-dev/smart-download-organizer" target="_blank">
+                                <h1 style="color: #FFDB70;">Downloads Org</h1>
+                                <br>
+                                <img src="./assets/images/downloads-organizer.png" alt="App logo" width="40" height="160">
+                            </a>
+
+                        </li>
+
+
+
+                        <li class="clients-item" style="text-align: center;">
+                            <a href="https://github.com/raquib-dev/feedback-api-fastapi" target="_blank">
+                                <h1 style="color: #FFDB70;">Feedback API</h1>
+                                <br>
+                                <img src="./assets/images/feedback.png" alt="App logo" width="40" height="160">
+                            </a>
+
+                        </li>
+
+
+                        <li class="clients-item" style="text-align: center;">
+                            <a href="https://github.com/raquib-dev/battery-alert-notifier" target="_blank">
+                                <h1 style="color: #FFDB70;">Battery Notifier</h1>
+                                <br>
+                                <img src="./assets/images/battery-icon.png" alt="App logo" width="40" height="160">
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </section>
+
+            </article>
+
+
+
+
+
+            <!--
+        - #RESUME
+      -->
+
+            <article class="resume" data-page="resume">
+                <header>
+                    <h2 class="h2 article-title">Resume</h2>
+                </header>
+
+                <section class="timeline">
+
+                    <div class="title-wrapper">
+                        <div class="icon-box">
+                            <ion-icon name="book-outline"></ion-icon>
+                        </div>
+
+                        <h3 class="h3">Work Experience</h3>
+                    </div>
+
+                    <ol class="timeline-list">
+
+                        <li class="timeline-item">
+                            <h4 class="h3 timeline-item-title">Senior Software Developer</h4>
+                            <h4 class="h4 timeline-item-title">Ausweg Info Controls Pvt Ltd, Coimbatore</h4>
+                            <span>May 2023 - Till Date</span>
+                            <ul>
+                                <!-- Start of bullet points -->
+                                <li class="timeline-text">Architected and developed robust REST APIs using FastAPI framework, serving 10,000+ daily requests with 99.9% uptime .</li>
+                                <li class="timeline-text">Led containerization initiative using Docker, successfully dockerizing all company projects and deploying on AWS EC2 and onpremises infrastructure .</li>
+                                <li class="timeline-text">Mentored junior team members and conducted comprehensive code reviews, reducing bugs by 40% and improving code maintainability .</li>
+                                <li class="timeline-text">Designed and optimized MySQL database schemas and queries, achieving 50% performance improvement in data retrieval .</li>
+                                <li class="timeline-text">Managed end-to-end deployment pipeline from development to production, ensuring scalable and reliable system operations .</li>
+                                <li class="timeline-text">Technical Skills : Python, MySQL, FastAPI, API Development(RESTful), API Testing, Postman, Docker, Linux, Git & Github, AWS-EC2 </li>
+                            </ul>
+                            <!-- End of bullet points -->
+
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h3 timeline-item-title">Junior Software Developer</h4>
+                            <h4 class="h4 timeline-item-title">Ausweg Info Controls Pvt Ltd, Coimbatore</h4>
+                            <span>Oct 2021 - May 2023</span>
+                            <ul>
+                                <!-- Start of bullet points -->
+                                <li class="timeline-text">Developed scalable Python backend applications with MySQL database integration, handling concurrent user loads of 500+ Implemented advanced socket programming solutions for real-time data extraction and processing from
+                                    industrial equipment .</li>
+                                <li class="timeline-text">Successfully migrated legacy Python 2.7 codebase to Python 3.9, resulting in 15% performance improvement and enhanced security .</li>
+                                <li class="timeline-text">Designed and developed a corporate website that significantly elevated the company's online presence, enhancing brand visibility and customer engagement .</li>
+                                <li class="timeline-text">Technical Skills : Python, MySQL, HTML, CSS , JavaScript, Linux, Git & Github </li>
+                            </ul>
+                            <!-- End of bullet points -->
+
+                        </li>
+
+                    </ol>
+
+                    <br><br>
+
+                    <header>
+                        <!-- <h2 class="h2 article-title">Resume</h2> -->
+                    </header>
+
+                    <section class="timeline">
+
+                        <div class="title-wrapper">
+                            <div class="icon-box">
+                                <ion-icon name="book-outline"></ion-icon>
+                            </div>
+
+                            <h3 class="h3">Education</h3>
+                        </div>
+
+                        <ol class="timeline-list">
+
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Bacherlor's</h4>
+                                <h4 class="h4 timeline-item-title">Hajee Karutha Rowther Howdia College, Uthamapalayam, Tamilnadu</h4>
+
+                                <span>2020 - 2023</span>
+
+                                <p class="timeline-text">
+                                    Bachelor of Information Technoology (Bsc.IT)
+                                </p>
+                            </li>
+
+                            <li class="timeline-item">
+                                <h4 class="h4 timeline-item-title">Higher Secondary Education</h4>
+
+                                <h4 class="h4 timeline-item-title">Gayathri Matriculation Hr Sec School, Chinnamanur, Tamilnadu</h4>
+
+                                <span>2018 - 2020</span>
+
+                                <p class="timeline-text">
+                                    Higher secondary education in Computer Science .
+                                </p>
+                                <p class="timeline-text">
+                                    Percentage : 63.8%
+                                </p>
+
+                            </li>
+
+                            <li class="timeline-item">
+
+                                <h4 class="h4 timeline-item-title">Secondary School</h4>
+                                <h4 class="h4 timeline-item-title">Gayathri Matriculation Hr Sec School, Chinnamanur, Tamilnadu</h4>
+
+                                <span>2018</span>
+
+                                <p class="timeline-text">
+                                    Percentage : 76.6%
+                                </p>
+
+                            </li>
+
+                        </ol>
+
+                    </section>
+
+                    <section class="timeline">
+
+                        <!--          <div class="title-wrapper">-->
+                        <!--            <div class="icon-box">-->
+                        <!--              <ion-icon name="book-outline"></ion-icon>-->
+                        <!--            </div>-->
+
+                        <!--            <h3 class="h3">Experience</h3>-->
+                        <!--          </div>-->
+
+
+
+                    </section>
+
+                    <section class="skill">
+
+                        <h3 class="h3 skills-title">My skills</h3>
+
+                        <ul class="skills-list content-card">
+
+                            <li class="skills-item">
+
+                                <div class="title-wrapper">
+                                    <h5 class="h5">Python</h5>
+                                    <data value="90">90%</data>
+                                </div>
+
+                                <div class="skill-progress-bg">
+                                    <div class="skill-progress-fill" style="width: 90%;"></div>
+                                </div>
+
+                            </li>
+
+                            <li class="skills-item">
+
+                                <div class="title-wrapper">
+                                    <h5 class="h5">MySQL</h5>
+                                    <data value="80">80%</data>
+                                </div>
+
+                                <div class="skill-progress-bg">
+                                    <div class="skill-progress-fill" style="width: 80%;"></div>
+                                </div>
+
+                            </li>
+                            <li class="skills-item">
+
+                                <div class="title-wrapper">
+                                    <h5 class="h5">FastAPI</h5>
+                                    <data value="70">70%</data>
+                                </div>
+
+                                <div class="skill-progress-bg">
+                                    <div class="skill-progress-fill" style="width: 70%;"></div>
+                                </div>
+
+                            </li>
+
+                            <li class="skills-item">
+
+                                <div class="title-wrapper">
+                                    <h5 class="h5">Docker</h5>
+                                    <data value="60">60%</data>
+                                </div>
+
+                                <div class="skill-progress-bg">
+                                    <div class="skill-progress-fill" style="width: 60%;"></div>
+                                </div>
+
+                            </li>
+
+                            <li class="skills-item">
+
+                                <div class="title-wrapper">
+                                    <h5 class="h5">Linux</h5>
+                                    <data value="60">60%</data>
+                                </div>
+
+                                <div class="skill-progress-bg">
+                                    <div class="skill-progress-fill" style="width: 60%;"></div>
+                                </div>
+
+                            </li>
+
+                            <li class="skills-item">
+
+                                <div class="title-wrapper">
+                                    <h5 class="h5">Git & Github</h5>
+                                    <data value="70">70%</data>
+                                </div>
+
+                                <div class="skill-progress-bg">
+                                    <div class="skill-progress-fill" style="width: 70%;"></div>
+                                </div>
+
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+                    <br><br><br>
+
+                    <section>
+                        <h3 class="h3 Resume-title">Resume/CV</h3>
+
+
+                        <li class="project-item  active" data-filter-item data-category="Android Application">
+                            <a href="./assets/pdf/raquib-resume.pdf" target="_blank">
+
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <center>
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                            <p><small>Check out my resume</small></p>
+                                        </center>
+
+                                    </div>
+
+                                    <img src="./assets/images/resume.png" alt="" loading="lazy" width="600" height="600">
+
+                                </figure>
+
+
+                            </a>
+                        </li>
+                    </section>
+            </article>
+
+
+
+
+
+            <!--
+        - #PORTFOLIO
+      -->
+
+            <article class="portfolio" data-page="portfolio">
+
+                <header>
+                    <h2 class="h2 article-title">Portfolio</h2>
+                </header>
+
+                <p style="color: #D6D6D6;">Explore my extensive portfolio of over 15+ Android applications available on the Google Play Store. From productivity tools to games, my diverse collection showcases a range of innovative and user-friendly apps. Click below to discover
+                    more.
+                </p>
+
+                <!-- <p style="color: hsl(0, 0%, 100%);">Explore my extensive portfolio of over 15+ Android applications available on the Google Play Store. From productivity tools to games, my diverse collection showcases a range of innovative and user-friendly apps. Click below to discover more.</h> -->
+                <li class="project-item  active" data-filter-item data-category="Android Application">
+                    <a href="https://play.google.com/store/apps/developer?id=Yugandhar+Kumar" target="_blank">
+                        <br><br>
+                        <!-- <ion-icon name="logo-google-playstore"></ion-icon> -->
+                        <h3 class="project-title" style="color: #FFDB70;">Playstore Portfolio</h3>
+
+                        <figure class="project-img">
+                            <div class="project-item-icon-box">
+                                <center>
+                                    <ion-icon name="eye-outline"></ion-icon>
+                                    <h6><small>Check out my apps on Play Store</small></h6>
+                                </center>
+
+                            </div>
+
+                            <img src="./assets/images/google-play-hero.svg" alt="Playstore portfolio" loading="lazy">
+                        </figure>
+
+
+                        <!-- <p class="project-category">Android Application</p> -->
+
+                    </a>
+                </li>
+
+                <section class="projects">
+
+                    <ul class="filter-list">
+
+                        <li class="filter-item">
+                            <button class="active"> <p style="color: #D6D6D6;">Here are the some sample Android applications </p></button>
+                        </li>
+
+                    </ul>
+
+                    <div class="filter-select-box">
+
+                        <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+                        <ul class="select-list">
+
+                            <li class="select-item">
+                                <!-- <button data-select-item>Android Application</button> -->
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <ul class="project-list">
+
+
+                        <li class="project-item  active" data-filter-item data-category="Android Application">
+                            <a href="https://play.google.com/store/apps/details?id=com.yugandhar_kumar.calculator" target="_blank">
+
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <center>
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                            <!-- <h6><small>Click here to view on Playstore</small></h6> -->
+                                        </center>
+
+                                    </div>
+
+                                    <img src="./assets/images/calculatoricon.png" alt="Calculator" loading="lazy">
+                                </figure>
+
+                                <h3 class="project-title" style="color: #FFDB70;">Calculator</h3>
+
+                                <!-- <p class="project-category">Android Application</p> -->
+
+                            </a>
+                        </li>
+
+
+                        <li class="project-item  active" data-filter-item data-category="Android Application">
+                            <a href="https://play.google.com/store/apps/details?id=com.yugandhar_kumar.notes" target="_blank">
+
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <center>
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                            <!-- <h6><small>Click here to view on Playstore</small></h6> -->
+                                        </center>
+
+                                    </div>
+
+                                    <img src="./assets/images/Notes%20image.jpg" alt="Notes" loading="lazy">
+                                </figure>
+
+                                <h3 class="project-title" style="color: #FFDB70;">Notes</h3>
+
+                                <!-- <p class="project-category">Android Application</p> -->
+
+                            </a>
+                        </li>
+
+                        <li class="project-item  active" data-filter-item data-category="Android Application">
+                            <a href="https://play.google.com/store/apps/details?id=com.yugandhar_kumar.directionalstepcounter" target="_blank">
+
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <center>
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                            <!-- <h6><small>Click here to view on Playstore</small></h6> -->
+                                        </center>
+
+                                    </div>
+
+                                    <img src="./assets/images/Compass.png" alt="Compass & Pedometer" loading="lazy">
+                                </figure>
+
+                                <h3 class="project-title" style="color: #FFDB70;">Compass & Pedometer</h3>
+
+                                <!-- <p class="project-category">Android Application</p> -->
+
+                            </a>
+                        </li>
+
+                        <li class="project-item  active" data-filter-item data-category="Android Application">
+                            <a href="https://play.google.com/store/apps/details?id=com.yugandhar_kumar.tictactoegame" target="_blank">
+
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <center>
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                            <!-- <h6><small>Click here to view on Playstore</small></h6> -->
+                                        </center>
+
+                                    </div>
+
+                                    <img src="./assets/images/TicTacToe.png" alt="Tic Tac Toe" loading="lazy">
+                                </figure>
+
+                                <h3 class="project-title" style="color: #FFDB70;">Tic Tac Toe</h3>
+
+                                <!-- <p class="project-category">Android Application</p> -->
+
+                            </a>
+                        </li>
+
+
+                        <li class="project-item  active" data-filter-item data-category="Android Application">
+                            <a href="https://play.google.com/store/apps/details?id=com.yugandhar_kumar.textrecognizer" target="_blank">
+
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <center>
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                            <!-- <h6><small>Click here to view on Playstore</small></h6> -->
+                                        </center>
+
+                                    </div>
+
+                                    <img src="./assets/images/textrecognizer.png" alt="Text Recognizer" loading="lazy">
+                                </figure>
+
+                                <h3 class="project-title" style="color: #FFDB70;">Text Recognizer</h3>
+
+                                <!-- <p class="project-category">Android Application</p> -->
+
+                            </a>
+                        </li>
+
+                        <li class="project-item  active" data-filter-item data-category="Android Application">
+                            <a href="https://play.google.com/store/apps/details?id=com.yugandhar_kumar.dice" target="_blank">
+
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <center>
+                                            <ion-icon name="eye-outline"></ion-icon>
+                                            <!-- <h6><small>Click here to view on Playstore</small></h6> -->
+                                        </center>
+
+                                    </div>
+
+                                    <img src="./assets/images/dice.png" alt="Roll a Dice" loading="lazy">
+                                </figure>
+
+                                <h3 class="project-title" style="color: #FFDB70;">Roll a Dice</h3>
+
+                                <!-- <p class="project-category">Android Application</p> -->
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </section>
+            </article>
+
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="px-6 py-16 text-center">
-        <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Skills & Tech Stack</h2>
-        <div class="flex flex-wrap justify-center gap-4 text-lg" data-aos="fade-up" data-aos-delay="100">
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">Python</span>
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">FastAPI</span>
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">MySQL</span>
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">Docker</span>
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">AWS EC2</span>
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">REST APIs</span>
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">Socket Programming</span>
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">AsyncIO</span>
-            <span class="bg-secondary text-white px-4 py-2 rounded-full">Git & GitHub</span>
-        </div>
-    </section>
+    </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="px-6 py-16 bg-gray-50 dark:bg-gray-800 text-center">
-        <h2 class="text-4xl font-bold mb-12" data-aos="fade-up">Let’s Connect</h2>
-        <p class="text-lg mb-4">Email: <a href="mailto:raquib.pythondev@gmail.com" class="text-secondary hover:underline">raquib.pythondev@gmail.com</a></p>
-        <p class="text-lg mb-8">GitHub: <a href="https://github.com/raquib-dev" class="text-secondary hover:underline">github.com/raquib-dev</a></p>
-        <div class="max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
-            <form action="https://formspree.io/f/your-form-id" method="POST">
-                <input type="text" name="name" placeholder="Your Name" class="w-full p-3 mb-4 rounded-lg border dark:bg-gray-700" required>
-                <input type="email" name="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded-lg border dark:bg-gray-700" required>
-                <textarea name="message" placeholder="Your Message" class="w-full p-3 mb-4 rounded-lg border dark:bg-gray-700" rows="5" required></textarea>
-                <button type="submit" class="bg-secondary text-white px-6 py-3 rounded-lg hover:bg-primary transition">Send Message</button>
-            </form>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
-        © 2025 Mohammed Raquib. Crafted with precision and passion.
-    </footer>
 
-    <script>
-        // Initialize AOS
-        AOS.init({ duration: 800, once: true });
 
-        // Dark Mode Toggle with Local Storage
-        const toggleButton = document.getElementById('theme-toggle');
-        const sunIcon = document.getElementById('sun-icon');
-        const moonIcon = document.getElementById('moon-icon');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
-            document.body.classList.add('dark');
-            sunIcon.classList.remove('hidden');
-            moonIcon.classList.add('hidden');
-        }
-        toggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            const isDark = document.body.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            sunIcon.classList.toggle('hidden', !isDark);
-            moonIcon.classList.toggle('hidden', isDark);
-        });
 
-        // Smooth Scrolling for Navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
